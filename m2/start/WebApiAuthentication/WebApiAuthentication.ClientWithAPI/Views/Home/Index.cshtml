@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+ 
+<h1>Web API Authentication Demo</h1>
+ 
+<div class="row">
+    <div class="col-md-4">
+        <button id="callApiButton" class="btn btn-primary">Call API</button>
+    </div>
+</div>
+
+<div id="apiResult" class="mt-3">
+    <!-- API results will be displayed here -->
+</div> 
+
+@section Scripts {
+    <script>
+           document.getElementById('callApiButton').addEventListener('click', function () {
+            fetch('/api/claims')
+                .then(response => response.json())
+                .then(data => {
+                    let resultDiv = document.getElementById('apiResult');
+                    resultDiv.innerHTML = '<h3>API Call Results</h3><ul>';
+                    data.forEach(claim => {
+                        debugger;
+                        resultDiv.innerHTML += `<li>${claim.type}: ${claim.value}</li>`;
+                    });
+                    resultDiv.innerHTML += '</ul>';
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+}
+ 
