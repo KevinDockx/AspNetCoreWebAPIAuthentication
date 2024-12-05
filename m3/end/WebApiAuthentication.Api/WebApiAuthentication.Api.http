@@ -1,0 +1,28 @@
+@WebApiAuthentication.Api_HostAddress = http://localhost:5093
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/?X-ApiKey=BV60HsJjG2a229zZuJ9Foya2xJpQKAR04LJVcrUO4vKYhSLhJ0p5ItcfdAfhGxcvgyJPKQ3ucyeeoPa2i2LCyQ==
+Accept: application/json
+
+###
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/?X-ApiKey=thisiswrong
+Accept: application/json
+
+###
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/
+X-ApiKey: BV60HsJjG2a229zZuJ9Foya2xJpQKAR04LJVcrUO4vKYhSLhJ0p5ItcfdAfhGxcvgyJPKQ3ucyeeoPa2i2LCyQ==
+Accept: application/json
+
+###
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/
+X-ApiKey: thisiswrong
+Accept: application/json
+
+###
