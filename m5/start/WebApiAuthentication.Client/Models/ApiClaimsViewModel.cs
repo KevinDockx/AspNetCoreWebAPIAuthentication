@@ -2,5 +2,5 @@
 
 public class ApiClaimsViewModel
 { 
-    public string ClaimsAsString { get; set; } = string.Empty;
+    public string? ClaimsAsString { get; set; } = string.Empty;
 }
