@@ -1,0 +1,10 @@
+@WebApiAuthentication.Api_HostAddress = https://localhost:7277
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+  
+###
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtldmluIiwic3ViIjoia2V2aW4iLCJqdGkiOiIxNmMzYzNmZiIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjU3ODciLCJodHRwczovL2xvY2FsaG9zdDo0NDM5NiIsImh0dHA6Ly9sb2NhbGhvc3Q6NTA5MyIsImh0dHBzOi8vbG9jYWxob3N0OjcyNzciXSwibmJmIjoxNzM0NTMwMTA5LCJleHAiOjE3NDIzMDYxMDksImlhdCI6MTczNDUzMDExMCwiaXNzIjoiZG90bmV0LXVzZXItand0cyJ9.Fu8lX-NrI7gxTgh2xvjPQpztjENPXhaT0Y5ez3e3_Iw
+Accept: application/json 

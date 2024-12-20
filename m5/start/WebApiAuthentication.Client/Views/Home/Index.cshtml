@@ -1,0 +1,22 @@
+﻿@model ApiClaimsViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+ <h1>Web API Authentication Demo</h1>
+ 
+<div class="row">
+    <div class="col-md-4">
+        <button id="btnCallApiApp" class="btn btn-primary"
+            asp-controller="Home" asp-action="CallApiApp">
+            Call API on behalf of the application
+        </button>
+        <button id="btnCallApiUser" class="btn btn-primary"
+                asp-controller="Home" asp-action="CallApiUser">
+            Call API on behalf of the user
+        </button>
+    </div> 
+</div> 
+<div class="row">
+    @Model.ClaimsAsString
+</div>

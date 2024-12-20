@@ -1,0 +1,24 @@
+@WebApiAuthentication.Api_HostAddress = https://localhost:7277
+ 
+
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/123
+Accept: application/json 
+
+###
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/123
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtldmluIiwic3ViIjoia2V2aW4iLCJqdGkiOiJmNjFkNGM1MCIsInNjb3BlIjpbIndlYXRoZXJmb3JlY2FzdGFwaS5yZWFkIiwid2VhdGhlcmZvcmVjYXN0YXBpLndyaXRlIl0sImF1ZCI6IndlYXRoZXJmb3JlY2FzdGFwaSIsIm5iZiI6MTczNDUyODc2OCwiZXhwIjoxNzQyMzA0NzY4LCJpYXQiOjE3MzQ1Mjg3NjksImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.CpfPx2wpXsAITX_hO3iMG-tgouuqevKUERx2cuQaFbA
+Accept: application/json 
+
+###
+
+POST {{WebApiAuthentication.Api_HostAddress}}/weatherforecast
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImtldmluIiwic3ViIjoia2V2aW4iLCJqdGkiOiJmNjFkNGM1MCIsInNjb3BlIjpbIndlYXRoZXJmb3JlY2FzdGFwaS5yZWFkIiwid2VhdGhlcmZvcmVjYXN0YXBpLndyaXRlIl0sImF1ZCI6IndlYXRoZXJmb3JlY2FzdGFwaSIsIm5iZiI6MTczNDUyODc2OCwiZXhwIjoxNzQyMzA0NzY4LCJpYXQiOjE3MzQ1Mjg3NjksImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.CpfPx2wpXsAITX_hO3iMG-tgouuqevKUERx2cuQaFbA
+Accept: application/json 
+Content-type: application/json
+{
+   "Date": "2025-01-01",
+   "TemperatureC": "6",
+   "Summary": "Cold sunny day"
+} 

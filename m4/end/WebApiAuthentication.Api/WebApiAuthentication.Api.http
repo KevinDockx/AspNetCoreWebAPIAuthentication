@@ -1,0 +1,20 @@
+@WebApiAuthentication.Api_HostAddress = https://localhost:7277
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{WebApiAuthentication.Api_HostAddress}}/account/login/
+Accept: application/json
+Content-type: application/json
+{
+   "Username":"Kevin",
+   "Password": "Pluralsight"
+}
+
+###
+
+GET {{WebApiAuthentication.Api_HostAddress}}/weatherforecast/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0IiwiZ2l2ZW5fbmFtZSI6IktldmluIiwiZmFtaWx5X25hbWUiOiJEb2NreCIsImVtYWlsIjoia2V2aW4uZG9ja3hAZ21haWwuY29tIiwibmJmIjoxNzMzNDk4NzY0LCJleHAiOjE3MzM1MDIzNjQsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNzciLCJhdWQiOiJ3ZWF0aGVyZm9yZWNhc3RhcGkifQ.HjRP3K7iL92T8oQ4p4Lgkny03Ug676omJOqOSxyKKfk
+Accept: application/json 
