@@ -1,0 +1,31 @@
+﻿@model ApiClaimsViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Web API Authentication Demo</h1>
+
+ <div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" asp-action="CallApiUser" method="post"> 
+            <button type="submit" class="btn btn-primary mb-2">
+                Call API on behalf of the user
+            </button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    @if (Model.Claims.Any())
+    {
+        <ul>
+            @foreach (var claim in Model.Claims)
+            {
+                <li>@claim.Type: @claim.Value</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No claims returned.</p>
+    } 
+</div>

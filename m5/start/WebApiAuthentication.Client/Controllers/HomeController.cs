@@ -22,9 +22,10 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CallApiApp()
     {
-        var resultFromCall = await CallApiWithTokenAsync(null); 
-        return View(new ApiClaimsViewModel() { 
-            ClaimsAsString = resultFromCall } );
+        var resultFromCall = await CallApiWithTokenAsync(string.Empty); 
+        return View("Index", 
+            new ApiClaimsViewModel() { 
+                Claims = resultFromCall } );
       
     }
 
@@ -32,16 +33,18 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CallApiUser()
     {
-        var resultFromCall = await CallApiWithTokenAsync(null);
-        return View(new ApiClaimsViewModel()
-        {
-            ClaimsAsString = resultFromCall
-        });
+        var resultFromCall = await CallApiWithTokenAsync(string.Empty);
+        return View("Index",
+            new ApiClaimsViewModel()
+            {
+                Claims = resultFromCall
+            });
     }
      
-    private async Task<string> CallApiWithTokenAsync(string? accessToken)
+    private async Task<List<ClaimDto>> CallApiWithTokenAsync(string accessToken)
     {
         var httpClient = _httpClientFactory.CreateClient("ApiClient");
+        var jsonSerializerOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web);
 
         var request = new HttpRequestMessage(
           HttpMethod.Get,
@@ -54,8 +57,8 @@ public class HomeController : Controller
 
         using (var responseStream = await response.Content.ReadAsStreamAsync())
         {
-            var body = await JsonSerializer.DeserializeAsync<string>(responseStream);
-            return body ?? string.Empty;
+            return await JsonSerializer.DeserializeAsync<List<ClaimDto>>(responseStream,
+                jsonSerializerOptions) ?? [];
         }
     }
 
